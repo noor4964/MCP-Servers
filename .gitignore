@@ -1,0 +1,19 @@
+# Logs and temporary files
+*.log
+*.tmp
+.DS_Store
+Thumbs.db
+
+# Backup files
+*.bak
+*-backup-*
+
+# IDE files
+.vscode/settings.json
+.idea/
+
+# OS generated files
+desktop.ini
+.Spotlight-V100
+.Trashes
+ehthumbs.db
