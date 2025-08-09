@@ -1,0 +1,34 @@
+{
+	"servers": {
+		"filesystem": {
+			"command": "npx",
+			"args": [
+				"-y",
+				"@modelcontextprotocol/server-filesystem@2025.7.29",
+				"${input:allowed_dirs}"
+			],
+			"type": "stdio"
+		},
+		"sqlite": {
+			"command": "npx",
+			"args": [
+				"-y",
+				"@modelcontextprotocol/server-sqlite@2025.7.29",
+				"${input:db_path}"
+			],
+			"type": "stdio"
+		}
+	},
+	"inputs": [
+		{
+			"id": "allowed_dirs",
+			"type": "promptString",
+			"description": "Enter the full path(s) to the directories you want the MCP server to access (comma-separated if multiple):"
+		},
+		{
+			"id": "db_path",
+			"type": "promptString",
+			"description": "Enter the full path to your SQLite database file:"
+		}
+	]
+}

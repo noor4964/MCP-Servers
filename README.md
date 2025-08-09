@@ -8,16 +8,34 @@ This directory contains your Model Context Protocol (MCP) configuration files an
 - `servers/` - Custom MCP server implementations
 - `scripts/` - Management and utility scripts
 
-## Current Configuration
+## Available Configurations
 
-- **mcp.json** - Main MCP configuration with filesystem server
+- **mcp.json** - Basic filesystem server with directory prompts
+- **mcp-with-sqlite.json** - Filesystem + SQLite server combination  
+- **mcp-preset-dirs.json** - Filesystem server with preset directories
 - **Server**: @modelcontextprotocol/server-filesystem@2025.7.29
 
 ## Usage
 
-1. Your main MCP config is in `configs/mcp.json`
-2. To update VS Code's MCP config, copy from `configs/mcp.json` to VS Code's user settings
-3. Use the scripts in `scripts/` for common management tasks
+1. **Switch configurations**: Run `scripts\switch-config.bat` to choose and deploy a configuration
+2. **Check status**: Run `scripts\status-check.bat` to verify your current setup
+3. **Manual management**: Use individual backup/deploy scripts as needed
+4. **Version control**: Use Git to track changes to your configurations
+
+## Management Scripts
+
+- `backup-mcp-config.bat` - Backup current VS Code MCP configuration
+- `deploy-mcp-config.bat` - Deploy main config to VS Code  
+- `switch-config.bat` - **Interactive config switcher** (recommended)
+- `status-check.bat` - Check current MCP setup status
+
+## Version Control
+
+This directory is now a Git repository. You can:
+- `git status` - Check what files have changed
+- `git add .` - Stage changes 
+- `git commit -m "message"` - Commit changes
+- `git log --oneline` - View commit history
 
 ## Notes
 
