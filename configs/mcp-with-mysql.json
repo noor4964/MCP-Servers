@@ -1,0 +1,66 @@
+{
+	"servers": {
+		"filesystem": {
+			"command": "npx",
+			"args": [
+				"-y",
+				"@modelcontextprotocol/server-filesystem@2025.7.29",
+				"${input:allowed_dirs}"
+			],
+			"type": "stdio"
+		},
+		"mysql": {
+			"command": "npx",
+			"args": [
+				"-y",
+				"@modelcontextprotocol/server-mysql@2025.7.29",
+				"--host",
+				"${input:mysql_host}",
+				"--port",
+				"${input:mysql_port}",
+				"--user",
+				"${input:mysql_user}",
+				"--password",
+				"${input:mysql_password}",
+				"--database",
+				"${input:mysql_database}"
+			],
+			"type": "stdio"
+		}
+	},
+	"inputs": [
+		{
+			"id": "allowed_dirs",
+			"type": "promptString",
+			"description": "Enter the full path(s) to the directories you want the MCP server to access (comma-separated if multiple):"
+		},
+		{
+			"id": "mysql_host",
+			"type": "promptString",
+			"description": "Enter MySQL server hostname (default: localhost):",
+			"default": "localhost"
+		},
+		{
+			"id": "mysql_port",
+			"type": "promptString",
+			"description": "Enter MySQL server port (default: 3306):",
+			"default": "3306"
+		},
+		{
+			"id": "mysql_user",
+			"type": "promptString",
+			"description": "Enter MySQL username:"
+		},
+		{
+			"id": "mysql_password",
+			"type": "promptString",
+			"description": "Enter MySQL password:",
+			"password": true
+		},
+		{
+			"id": "mysql_database",
+			"type": "promptString",
+			"description": "Enter MySQL database name:"
+		}
+	]
+}

@@ -13,6 +13,7 @@ This directory contains your Model Context Protocol (MCP) configuration files an
 - **mcp.json** - Basic filesystem server with directory prompts
 - **mcp-with-sqlite.json** - Filesystem + SQLite server combination  
 - **mcp-preset-dirs.json** - Filesystem server with preset directories
+- **mcp-with-mysql.json** - Filesystem + MySQL server combination
 - **Server**: @modelcontextprotocol/server-filesystem@2025.7.29
 
 ## Usage
