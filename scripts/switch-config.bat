@@ -24,7 +24,7 @@ if "%config_file%"=="" (
 
 echo.
 echo Backing up current VS Code configuration...
-call backup-mcp-config.bat
+call "%~dp0backup-mcp-config.bat"
 
 echo.
 echo Deploying %config_file%...
